@@ -6,23 +6,17 @@ public class StarPyramid {
 
 	public static void main(String[] args) {
 		
-		String star = "*";
-		String blank = " ";
-		
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+		System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+			
 		int n = scanner.nextInt();
 		
-		for(int i = 1; i<=n; i++) {
-			for(int j = 1; j <= i; j++) {
-				if((int)i%2==0) continue;
-					else {
-					System.out.print("*".repeat((int)j*2 -1));
-				} 
-				System.out.println();
+		for(int i=1; i<=n; i++) {
+			for(int j=1; j<=n-i; j++) {
+				System.out.print(" ");
 			}
-			scanner.close();
+			System.out.println("*".repeat(2*i-1));
 		}
-
+		scanner.close();
 	}
 }
