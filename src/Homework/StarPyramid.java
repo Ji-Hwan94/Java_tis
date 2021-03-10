@@ -7,7 +7,7 @@ public class StarPyramid {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+		System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
 			
 		int n = scanner.nextInt();
 		
