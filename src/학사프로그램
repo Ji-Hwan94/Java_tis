@@ -1,0 +1,74 @@
+import java.awt.Container;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class HacSa extends JFrame {
+	
+	JTextField tfId = null; // 전역변수로 설정한다.
+	JTextField tfName = null;
+	JTextField tfDepart = null;
+	JTextField tfAddress = null;
+	
+	JTextArea taList = null;
+	
+	JButton btnInsert = null;
+	JButton btnSelect = null;
+	JButton btnUpdate = null;
+	JButton btnDelete = null;
+	
+	public HacSa() {
+		this.setTitle("학사 관리");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		Container c = getContentPane();
+		c.setLayout(new FlowLayout());
+		
+		c.add(new JLabel("학번"));
+		this.tfId = new JTextField(20);
+		c.add(this.tfId);
+		
+		c.add(new JLabel("이름"));
+		this.tfName = new JTextField(20);
+		c.add(tfName);
+		
+		c.add(new JLabel("학과"));
+		this.tfDepart = new JTextField(20);
+		c.add(this.tfDepart);
+		
+		c.add(new JLabel("주소"));
+		this.tfAddress = new JTextField(20);
+		c.add(this.tfAddress);
+		
+		this.taList = new JTextArea(10, 23);
+		c.add(new JScrollPane(this.taList));
+		
+		this.btnInsert = new JButton("등록");
+		c.add(this.btnInsert);
+		
+		this.btnSelect = new JButton("목록");
+		c.add(this.btnSelect);
+		
+		this.btnUpdate = new JButton("수정");
+		c.add(this.btnUpdate);
+		
+		this.btnDelete = new JButton("삭제");
+		c.add(this.btnDelete);
+		
+		
+		
+		this.setSize(300, 500);
+		this.setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		new HacSa();
+
+	}
+
+}
