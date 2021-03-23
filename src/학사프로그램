@@ -1,9 +1,13 @@
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -50,6 +54,18 @@ public class HacSa extends JFrame {
 		
 		this.btnInsert = new JButton("등록");
 		c.add(this.btnInsert);
+		this.btnInsert.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// DB연동, 데이터 insert
+				
+				
+				JOptionPane.showMessageDialog(null, "등록 되었습니다.");
+				
+			}
+		});
+		
 		
 		this.btnSelect = new JButton("목록");
 		c.add(this.btnSelect);
@@ -59,9 +75,25 @@ public class HacSa extends JFrame {
 		
 		this.btnDelete = new JButton("삭제");
 		c.add(this.btnDelete);
+		this.btnDelete.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int result = JOptionPane.showConfirmDialog(null, "삭제하시겠습니까?", "알림", JOptionPane.YES_NO_OPTION);
+				System.out.println(result); //yes = 0, no = 1, x버튼 = -1
+				if (result == JOptionPane.YES_OPTION) {
+					JOptionPane.showMessageDialog(null, "삭제 되었습니다.");
+				}
+			}
+		});
 		
+		JPanel btn = new JPanel();
+		btn.add(btnInsert);
+		btn.add(btnSelect);
+		btn.add(btnUpdate);
+		btn.add(btnDelete);
 		
-		
+		c.add(btn);
 		this.setSize(300, 500);
 		this.setVisible(true);
 	}
