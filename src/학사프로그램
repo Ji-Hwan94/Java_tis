@@ -58,11 +58,25 @@ public class HacSa extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// DB연동, 데이터 insert
 				
-				
-				JOptionPane.showMessageDialog(null, "등록 되었습니다.");
-				
+				if(tfId.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "학번을 등록해주세요.");
+					return;
+				}
+				if(tfName.getText().length()==0) {
+					JOptionPane.showMessageDialog(null, "이름을 등록해주세요.");
+					return;
+				}
+				if(tfDepart.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "학과를 등록해주세요.");
+					return;
+				}
+				if(tfAddress.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "주소를 등록해주세요.");
+					return;
+				}
+				else
+					JOptionPane.showMessageDialog(null, "등록 되었습니다.");
 			}
 		});
 		
@@ -94,7 +108,7 @@ public class HacSa extends JFrame {
 		btn.add(btnDelete);
 		
 		c.add(btn);
-		this.setSize(300, 500);
+		this.setSize(260, 500);
 		this.setVisible(true);
 	}
 	
